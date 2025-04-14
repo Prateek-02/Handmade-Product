@@ -1,4 +1,5 @@
 <x-app-layout>
+
     <x-slot name="header">
         <h2 class="text-xl font-semibold text-gray-800 leading-tight bg-gradient-to-r from-blue-500 to-teal-600 bg-clip-text text-transparent">
             {{ __('Welcome to Buyer Home') }}

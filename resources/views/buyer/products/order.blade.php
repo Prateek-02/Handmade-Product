@@ -22,9 +22,7 @@
                     <label for="quantity" class="block text-sm font-medium text-gray-700">Quantity</label>
                     <input type="number" name="quantity" id="quantity" value="1" min="1" max="{{ $product->quantity }}" required
                         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                    @error('quantity')
-                        <span class="text-sm text-red-600">{{ $message }}</span>
-                    @enderror
+                    
                 </div>
 
                 <button type="submit" 

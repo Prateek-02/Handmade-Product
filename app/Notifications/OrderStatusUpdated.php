@@ -32,6 +32,7 @@ class OrderStatusUpdated extends Notification implements ShouldQueue
             ->line('The status of your order has been updated.')
             ->line('Product: ' . $this->order->product->name)
             ->line('Current Status: ' . ucfirst($this->order->status))
-            ->line('Thank you for shopping with us!');
+            ->line('Thank you for shopping with us!')
+            ->salutation('Warm regards, Handmade Marketplace Team');
     }
 }
