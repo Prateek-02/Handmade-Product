@@ -1,4 +1,5 @@
 <x-guest-layout>
+    <x-slot name="title">Register</x-slot>
     <div class="flex w-full">
         <!-- Left side - Image -->
         <div class="hidden lg:block lg:w-1/2">
