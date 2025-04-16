@@ -1,5 +1,9 @@
 {{-- resources/views/buyer/orders/history.blade.php --}}
 <x-app-layout>
+    <x-slot name="title">
+        {{ __('My Order History') }}
+    </x-slot>
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('My Order History') }}

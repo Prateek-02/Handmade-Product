@@ -1,5 +1,9 @@
 {{-- resources/views/buyer/products/address.blade.php --}}
 <x-app-layout>
+    <x-slot name="title">
+        {{ __('Shipping Address') }}
+    </x-slot>
+
     <x-slot name="header">
         <h2 class="font-semibold text-2xl text-gray-800 leading-tight">
             {{ __('Shipping Address') }}

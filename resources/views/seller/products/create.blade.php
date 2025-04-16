@@ -1,4 +1,8 @@
 <x-app-layout>
+    <x-slot name="title">
+        {{ __('Add New Product') }}
+    </x-slot>
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">Add New Product</h2>
     </x-slot>

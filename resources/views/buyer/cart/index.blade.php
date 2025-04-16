@@ -1,4 +1,8 @@
 <x-app-layout>
+    <x-slot name="title">
+        {{ __('My Cart') }}
+    </x-slot>
+
     <x-slot name="header" class="text-2xl font-semibold text-gray-800">My Cart</x-slot>
 
     <div class="py-6 max-w-6xl mx-auto">

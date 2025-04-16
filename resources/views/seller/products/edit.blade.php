@@ -1,4 +1,8 @@
 <x-app-layout>
+    <x-slot name="title">
+        {{ __('Edit Product') }}
+    </x-slot>
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">Edit Product</h2>
     </x-slot>
