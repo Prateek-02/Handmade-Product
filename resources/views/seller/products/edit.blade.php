@@ -23,6 +23,12 @@
                 <input type="number" step="0.01" name="price" value="{{ old('price', $product->price) }}" class="border rounded p-2 w-full" required>
             </div>
 
+            <div class="mt-4">
+                <label for="quantity" class="block text-sm font-medium text-gray-700">Quantity (Stock)</label>
+                <input type="number" name="quantity" id="quantity" min="0" value="{{ old('quantity', $product->quantity) }}"
+                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+            </div>
+
             <div class="mb-4">
                 <label class="block">Product Image</label>
                 <input type="file" name="image" class="border rounded p-2 w-full" accept="image/*">

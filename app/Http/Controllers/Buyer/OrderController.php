@@ -20,20 +20,18 @@ class OrderController extends Controller
     }
 
     /**
-     * Show the address form after selecting quantity (POST method).
+     * Show the address form after selecting quantity.
      */
     public function addressForm(Request $request, Product $product)
     {
-        $quantity = $request->input('quantity'); // ✅ not 'redirect_quantity'
-    
+        $quantity = $request->input('quantity');
+
         if (!$quantity || $quantity < 1 || $quantity > $product->quantity) {
             return redirect()->route('buyer.order.form', $product->id)->withErrors(['quantity' => 'Invalid quantity.']);
         }
-    
+
         return view('buyer.products.address', compact('product', 'quantity'));
     }
-    
-    
 
     /**
      * Place an order after address submission.
@@ -71,7 +69,8 @@ class OrderController extends Controller
         // Notify the buyer
         Auth::user()->notify(new OrderStatusUpdated($order));
 
-        return redirect()->route('buyer.orders')->with('success', 'Order placed successfully!');
+        // Redirect to order confirmation page
+        return redirect()->route('buyer.order.confirmation', $order->id);
     }
 
     /**
@@ -85,5 +84,18 @@ class OrderController extends Controller
             ->get();
 
         return view('buyer.orders.index', compact('orders'));
+    }
+
+    /**
+     * Show confirmation page after placing an order.
+     */
+    public function confirmation(Order $order)
+    {
+        // Ensure the user is the owner of the order
+        if ($order->buyer_id !== Auth::id()) {
+            abort(403);
+        }
+
+        return view('buyer.orders.confirmation', compact('order'));
     }
 }

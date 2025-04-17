@@ -67,19 +67,21 @@ class ProductController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        if ($request->hasFile('image')) {
-            $product->image = $request->file('image')->store('products', 'public');
-        }
-
-        $product->update([
+        $data = [
             'name' => $request->name,
             'price' => $request->price,
             'quantity' => $request->quantity,
-            'image' => $product->image, // store updated image path
-        ]);
+        ];
+
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('products', 'public');
+        }
+
+        $product->update($data);
 
         return redirect()->route('seller.products.index')->with('success', 'Product updated successfully!');
     }
+
 
     public function destroy(Product $product)
     {
