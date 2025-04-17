@@ -15,6 +15,10 @@ class Order extends Model
         'product_id',
         'quantity',
         'total_price',
+        'address',
+        'city',
+        'state',
+        'pincode',
         'status',
     ];
 

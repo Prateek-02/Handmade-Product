@@ -38,6 +38,7 @@ class OrderController extends Controller
      */
     public function placeOrder(Request $request, Product $product)
     {
+        \Log::info('Order Data:', $request->all());
         $request->validate([
             'quantity' => 'required|integer|min:1|max:' . $product->quantity,
             'address' => 'required|string|max:255',
@@ -46,32 +47,34 @@ class OrderController extends Controller
             'pincode' => 'required|digits:6',
         ]);
 
+        // Ensure quantity and total price are calculated properly
         $quantity = $request->quantity;
         $totalPrice = $product->price * $quantity;
 
-        // Create the order
+        // Create the order, including the shipping details
         $order = Order::create([
             'buyer_id' => Auth::id(),
             'seller_id' => $product->user_id,
             'product_id' => $product->id,
             'quantity' => $quantity,
             'total_price' => $totalPrice,
-            'address' => $request->address,
-            'city' => $request->city,
-            'state' => $request->state,
-            'pincode' => $request->pincode,
+            'address' => $request->address,  // Shipping address
+            'city' => $request->city,        // Shipping city
+            'state' => $request->state,      // Shipping state
+            'pincode' => $request->pincode,  // Shipping pincode
             'status' => 'pending',
         ]);
 
         // Reduce the product stock
         $product->decrement('quantity', $quantity);
 
-        // Notify the buyer
+        // Optionally, notify the buyer about the order status
         Auth::user()->notify(new OrderStatusUpdated($order));
 
         // Redirect to order confirmation page
         return redirect()->route('buyer.order.confirmation', $order->id);
     }
+
 
     /**
      * Display order history for the logged-in buyer.
