@@ -1,4 +1,3 @@
-{{-- resources/views/buyer/products/address.blade.php --}}
 <x-app-layout>
     <x-slot name="title">
         {{ __('Shipping Address') }}
@@ -20,20 +19,55 @@
 
                 <div class="grid grid-cols-1 gap-4">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Address</label>
-                        <textarea name="address" rows="3" required class="w-full mt-1 rounded border-gray-300 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                        <label class="block text-sm font-medium text-gray-700" for="address">Address</label>
+                        <textarea 
+                            name="address" 
+                            rows="3" 
+                            id="address" 
+                            required 
+                            class="w-full mt-1 rounded border-gray-300 focus:ring-indigo-500 focus:border-indigo-500">{{ old('address') }}</textarea>
+                        @error('address')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">City</label>
-                        <input type="text" name="city" required class="w-full mt-1 rounded border-gray-300 focus:ring-indigo-500 focus:border-indigo-500">
+                        <label class="block text-sm font-medium text-gray-700" for="city">City</label>
+                        <input 
+                            type="text" 
+                            name="city" 
+                            id="city"
+                            value="{{ old('city') }}" 
+                            required 
+                            class="w-full mt-1 rounded border-gray-300 focus:ring-indigo-500 focus:border-indigo-500">
+                        @error('city')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">State</label>
-                        <input type="text" name="state" required class="w-full mt-1 rounded border-gray-300 focus:ring-indigo-500 focus:border-indigo-500">
+                        <label class="block text-sm font-medium text-gray-700" for="state">State</label>
+                        <input 
+                            type="text" 
+                            name="state" 
+                            id="state"
+                            value="{{ old('state') }}" 
+                            required 
+                            class="w-full mt-1 rounded border-gray-300 focus:ring-indigo-500 focus:border-indigo-500">
+                        @error('state')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Pincode</label>
-                        <input type="text" name="pincode" required class="w-full mt-1 rounded border-gray-300 focus:ring-indigo-500 focus:border-indigo-500">
+                        <label class="block text-sm font-medium text-gray-700" for="pincode">Pincode</label>
+                        <input 
+                            type="text" 
+                            name="pincode" 
+                            id="pincode"
+                            value="{{ old('pincode') }}" 
+                            required 
+                            class="w-full mt-1 rounded border-gray-300 focus:ring-indigo-500 focus:border-indigo-500">
+                        @error('pincode')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
                 </div>
 

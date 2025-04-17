@@ -16,10 +16,10 @@
             <!-- Shipping Address -->
             <div class="border rounded p-4">
                 <h3 class="text-lg font-bold mb-3">📦 Shipping Address</h3>
-                <p><strong>Address:</strong> {{ $order->address }}</p>
-                <p><strong>City:</strong> {{ $order->city }}</p>
-                <p><strong>State:</strong> {{ $order->state }}</p>
-                <p><strong>Pincode:</strong> {{ $order->pincode }}</p>
+                <p><strong>Address:</strong> {{ $order->address ?? 'Not provided' }}</p>
+                <p><strong>City:</strong> {{ $order->city ?? 'Not provided' }}</p>
+                <p><strong>State:</strong> {{ $order->state ?? 'Not provided' }}</p>
+                <p><strong>Pincode:</strong> {{ $order->pincode ?? 'Not provided' }}</p>
             </div>
         </div>
 
