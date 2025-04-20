@@ -3,8 +3,8 @@
         {{ __('Buyer Home') }}
     </x-slot>
 
-    <x-slot name="header">
-        <h2 class="text-xl font-semibold text-gray-800 leading-tight bg-gradient-to-r from-blue-500 to-teal-600 bg-clip-text text-transparent">
+    <x-slot name="header" class="bg-blue-500">
+        <h2 class="text-xl font-semibold text-gray-800 leading-tight bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent">
             {{ __('Welcome to Buyer Home') }}
         </h2>
     </x-slot>
@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <div class="py-4 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+    <div class="py-4 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-green-100 to-green-200 rounded-lg shadow-lg">
         <!-- Search & Filter Section -->
         <div class="mb-6 grid md:grid-cols-2 gap-4">
             <!-- Search Bar -->

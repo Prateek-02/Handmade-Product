@@ -96,11 +96,35 @@
                     <p class="text-gray-600">Every purchase directly supports independent creators and their craft.</p>
                 </div>
             </div>
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <img src="https://plus.unsplash.com/premium_photo-1732137395998-89ade22efe5f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGFydGlzYW4lMjBqZXdlbGxlcnl8ZW58MHx8MHx8fDA%3D" alt="Artisan Jewelry" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-indigo-700 mb-2">Artisan Jewelry</h3>
+                    <p class="text-gray-600">Explore handcrafted jewelry that tells a story.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <img src="https://plus.unsplash.com/premium_photo-1663039977692-8f0d64dba014?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGFuZG1hZGUlMjBwb3R0ZXJ5fGVufDB8fDB8fHww" alt="Handmade Pottery" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-indigo-700 mb-2">Handmade Pottery</h3>
+                    <p class="text-gray-600">Discover unique pottery pieces crafted by skilled artisans.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <img src="https://plus.unsplash.com/premium_photo-1688125414593-391cf90f3103?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZnVybml0dXJlfGVufDB8fDB8fHww" alt="Stylish Sofa" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-indigo-700 mb-2">Custom Furniture</h3>
+                    <p class="text-gray-600">Elevate your space with bespoke furniture made just for you.</p>
+                </div>
+            </div>
         </div>
         @endguest
 
-        <footer class="mt-16 text-sm text-white relative z-10">
-            &copy; {{ date('Y') }} Handmade Marketplace. All rights reserved.
+        <footer class="bg-indigo-900 text-white py-8">
+            <p class="text-sm opacity-75">&copy; {{ date('Y') }} Handmade MarketPlace. All rights reserved.</p>
         </footer>
     </div>
 </body>

@@ -46,21 +46,29 @@
         @endisset
 
         {{-- 🌐 Main Content --}}
-        <main class="py-8 flex-grow page-transition">
+        <main class=" flex-grow page-transition">
             {{ $slot }}
         </main>
         
         {{-- 👣 Footer --}}
-        <footer class="bg-indigo-900 text-white py-6">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <footer class="bg-indigo-900 text-white py-8">
+            <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="mb-4 md:mb-0">
-                        <p class="text-sm">&copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.</p>
+                    <div class="mb-4 md:mb-0 text-center md:text-left">
+                        <p class="text-sm opacity-75">&copy; {{ date('Y') }} Handmade MarketPlace. All rights reserved.</p>
                     </div>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-indigo-200 hover:text-white transition duration-150">Terms</a>
-                        <a href="#" class="text-indigo-200 hover:text-white transition duration-150">Privacy</a>
-                        <a href="#" class="text-indigo-200 hover:text-white transition duration-150">Contact</a>
+                    <div class="flex space-x-6">
+                        @if (Route::has('terms'))
+                            <a href="{{ route('terms') }}" class="text-gray-300 hover:text-gray-200 transition duration-300">Terms</a>
+                        @endif
+
+                        @if (Route::has('privacy'))
+                            <a href="{{ route('privacy') }}" class="text-gray-300 hover:text-gray-200 transition duration-300">Privacy</a>
+                        @endif
+
+                        @if (Route::has('contact'))
+                            <a href="{{ route('contact') }}" class="text-gray-300 hover:text-gray-200 transition duration-300">Contact</a>
+                        @endif
                     </div>
                 </div>
             </div>
