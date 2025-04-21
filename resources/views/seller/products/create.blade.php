@@ -35,7 +35,9 @@
                     placeholder="Enter product name"
                     required
                     autofocus
+                    pattern="[A-Za-z\s]+"
                 >
+                <p class="text-xs text-gray-500 mt-1">Name should be 3-50 characters and contain only letters and spaces.</p>
             </div>
 
             {{-- Product Price --}}
@@ -43,13 +45,14 @@
                 <label for="price" class="block text-gray-700 font-semibold mb-2">Price (₹)</label>
                 <input
                     type="number"
-                    step="0.01"
+                    step="0.00"
                     name="price"
                     id="price"
                     value="{{ old('price') }}"
                     class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     placeholder="Enter price"
                     required
+
                 >
             </div>
 
@@ -64,6 +67,8 @@
                     class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     placeholder="Enter quantity"
                     required
+                    min="1"
+                    
                 >
             </div>
             <div class="mb-6">

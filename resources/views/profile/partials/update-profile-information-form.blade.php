@@ -22,13 +22,13 @@
 
         <div class="transition duration-300 ease-in-out transform hover:scale-[1.01]">
             <x-input-label for="name" :value="__('Name')" class="text-indigo-700 font-semibold" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full border-indigo-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" :value="old('name', $user->name)" required autofocus autocomplete="name" />
+            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full border-indigo-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" :value="old('name', $user->name)" required autofocus autocomplete="name" minlength="3" maxlength="50" pattern="[A-Za-z\s]+" title="Name should only contain letters and spaces"/>
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
         <div class="transition duration-300 ease-in-out transform hover:scale-[1.01]">
             <x-input-label for="email" :value="__('Email')" class="text-indigo-700 font-semibold" />
-            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full border-indigo-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" :value="old('email', $user->email)" required autocomplete="username" />
+            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full border-indigo-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" :value="old('email', $user->email)" required autocomplete="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address"/>
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())

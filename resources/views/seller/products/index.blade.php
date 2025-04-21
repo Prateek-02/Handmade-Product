@@ -38,6 +38,12 @@
                             <h3 class="text-lg font-semibold text-gray-900">{{ $product->name }}</h3>
                             <p class="text-sm text-gray-600">Price: ₹{{ number_format($product->price, 2) }}</p>
                         </div>
+
+                        <div>
+                            <div class="flex items-center justify-center">
+                                <p class="text-sm text-gray-600">Quantity: {{ $product->quantity }}</p>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="flex space-x-2">

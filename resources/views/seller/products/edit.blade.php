@@ -20,7 +20,7 @@
 
             <div class="mb-4">
                 <label class="block">Price</label>
-                <input type="number" step="0.01" name="price" value="{{ old('price', $product->price) }}" class="border rounded p-2 w-full" required>
+                <input type="number" step="0.00" name="price" value="{{ old('price', $product->price) }}" class="border rounded p-2 w-full" required>
             </div>
 
             <div class="mt-4">

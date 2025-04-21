@@ -44,15 +44,17 @@
                     <!-- Name -->
                     <div>
                         <x-input-label for="name" :value="__('Name')" class="text-gray-700 font-semibold" />
-                        <x-text-input id="name" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 transition duration-300" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                        <x-text-input id="name" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 transition duration-300" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" minlength="3" maxlength="30" pattern="[A-Za-z\s]+" title="Name should only contain letters and spaces" />
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                        <p class="text-xs text-gray-500 mt-1">Name should be 3-30 characters and contain only letters and spaces.</p>
                     </div>
 
                     <!-- Email Address -->
                     <div class="mt-4">
                         <x-input-label for="email" :value="__('Email')" class="text-gray-700 font-semibold" />
-                        <x-text-input id="email" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 transition duration-300" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                        <x-text-input id="email" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 transition duration-300" type="email" name="email" :value="old('email')" required autocomplete="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address" />
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                        
                     </div>
 
                     <!-- Role Selection -->

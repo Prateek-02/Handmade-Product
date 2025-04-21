@@ -17,21 +17,21 @@
             <!-- Name Input -->
             <div>
                 <label class="block text-lg font-semibold text-gray-800">Your Name</label>
-                <input type="text" name="name" required placeholder="Enter your full name"
+                <input type="text" name="name" required placeholder="Enter your full name" minlength="3" maxlength="30" pattern="[A-Za-z\s]+" title="Name should only contain letters and spaces"
                     class="w-full mt-1 p-4 border border-gray-300 rounded-lg focus:border-indigo-500 focus:ring focus:ring-indigo-200 transition duration-200 shadow-md placeholder-gray-500">
             </div>
 
             <!-- Email Input -->
             <div>
                 <label class="block text-lg font-semibold text-gray-800">Your Email</label>
-                <input type="email" name="email" required placeholder="Enter your email address"
+                <input type="email" name="email" required placeholder="Enter your email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address"
                     class="w-full mt-1 p-4 border border-gray-300 rounded-lg focus:border-indigo-500 focus:ring focus:ring-indigo-200 transition duration-200 shadow-md placeholder-gray-500">
             </div>
 
             <!-- Message Input -->
             <div>
                 <label class="block text-lg font-semibold text-gray-800">Your Message</label>
-                <textarea name="message" rows="6" required placeholder="Write your message here"
+                <textarea name="message" rows="6" required placeholder="Write your message here" minlength="5" maxlength="250"
                     class="w-full mt-1 p-4 border border-gray-300 rounded-lg focus:border-indigo-500 focus:ring focus:ring-indigo-200 transition duration-200 shadow-md placeholder-gray-500"></textarea>
             </div>
 
